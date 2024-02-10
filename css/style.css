@@ -1,0 +1,153 @@
+/*Geral*/
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+    color: #333;
+    box-sizing: border-box; /*input não passar da largura maxima da div*/
+}
+
+body{
+    background-image: url("../image/fundo.jpg");
+    background-position: center; /*imagem centralizada na tela*/
+    background-size: cover;/*imagem se adaptar ao tamanho da tela*/
+}
+
+button {
+    background-color: #fdfdfd;
+    color:#102f5e;
+    padding: .3rem .6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+
+    & i{
+        color:#102f5e;
+        pointer-events: none; /*para desabilitar os eventos do icone, assim quando o usuário clicar no icone, é como se clicasse no botão*/
+    }
+    &:hover {
+        background-color: #102f5e;
+        color: white;
+        & i{
+        color: white;
+        }
+    }
+}
+
+input, select{
+    padding: 0.25rem 0.5rem;
+}
+
+.hide{
+    display: none;
+}
+
+/* Todo header */
+.todo-container{
+    max-width: 450px;
+    margin: 3rem auto;
+    background-color: #fdfdfd;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.todo-container header{
+    text-align: center;
+    padding: 0 1rem 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+/*Todo Form*/
+#todo-form, #edit-form{
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+#todo-form p, #edit-form p{
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-control{
+    display: flex;
+
+    & input{
+        margin-right: 0.3rem;
+    }
+}
+
+
+#cancel-edit-btn{
+    margin-top: 1rem;
+}
+
+/*Todo toolbar*/
+#toolbar{
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    
+    & h4{
+        margin-bottom: .5rem;
+    }
+}
+
+
+#search{
+    border-right: 1px solid #ddd;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    
+    & form{
+        display: flex;
+
+        & input{
+            width: 100%;
+            margin-right: 0.3rem;
+        }
+    }
+}
+
+#filter{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+
+    & select{
+        flex: 1;
+    }
+}
+
+/*Todo List*/
+.todo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    transition: .3s;
+
+    & h3{
+        flex:1;
+        font-size: 0.9rem;
+    }
+
+    & button{
+        margin-left: 0.4rem;
+    }
+}
+.done {
+    background-color: #395169;
+
+    & h3{
+        color: #fff;
+        text-decoration: line-through;/*linha cortando o texto*/
+        font-style: italic;
+    }
+}
